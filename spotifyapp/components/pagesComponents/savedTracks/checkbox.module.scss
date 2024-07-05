@@ -1,0 +1,27 @@
+@use "../../../constants/colors" as *;
+
+.box {
+    min-width: 24px;
+    height: 24px;
+    margin-top: 18px;
+    border-radius: 3px;
+    transition: all 0.2s;
+    text-decoration: none;
+    background-color: $spotify-blackLight;
+    margin-right: 18px;
+    margin-left: auto;
+    box-shadow: 1px 1px 2px $shadowStrong;
+    cursor: pointer;
+    &__clicked {
+        min-width: 24px;
+        height: 24px;
+        margin-top: 18px;
+        border-radius: 3px;
+        transition: all 0.2s;
+        text-decoration: none;
+        background-color: $spotify-current;
+        margin-right: 36px;
+        margin-left: auto;
+        cursor: pointer;
+    }
+}

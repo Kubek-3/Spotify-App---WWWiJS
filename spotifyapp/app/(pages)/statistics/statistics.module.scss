@@ -1,0 +1,141 @@
+@use '../../../constants/colors' as *;
+.boxNav {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	&__artistsBtn,
+	&__tracksBtn,
+	&__termsBtn {
+		padding: 1em 1.4em;
+		font-size: 1.6rem;
+		border-radius: 12px;
+		background-color: $spotify-blackLight;
+		color: $white;
+		text-shadow: 3px 3px 5px $shadowStrong;
+		box-shadow: 2px 2px 3px $spotify-greenShadow;
+		border-top: 1px solid $grey 1px solid transparent;
+		border-left: 1px solid $grey 1px solid transparent;
+		border-bottom: 2px solid $spotify-blackStrong;
+		border-right: 2px solid $spotify-blackStrong;
+		transition: border 0.3s;
+		cursor: pointer;
+		&:active {
+			border-bottom: 2px solid $grey;
+			border-right: 2px solid $grey;
+			border-top: 2px solid $spotify-blackStrong;
+			border-left: 2px solid $spotify-blackStrong;
+		}
+	}
+
+	&__artistsBtn,
+	&__tracksBtn {
+		margin-right: 1em;
+	}
+
+	&__artistsBtn {
+		margin-left: 0.15em;
+	}
+
+	&__dropDownBox {
+		position: relative;
+	}
+
+	&__termsDropDown {
+		transform: scaleY(0);
+		position: absolute;
+		flex-direction: column;
+		border-radius: 12px;
+		box-shadow: 2px 2px 3px $spotify-greenShadow;
+		overflow: hidden;
+		background-color: $spotify-blackLight;
+		transition: transform 0.3s;
+		transform-origin: top;
+		z-index: 10;
+	}
+
+	&__shortTermBtn,
+	&__mediumTermBtn,
+	&__longTermBtn {
+		position: relative;
+		padding: 1.4em;
+		background-color: $spotify-blackLight;
+		color: $white;
+		text-shadow: 3px 3px 5px $shadowStrong;
+		border: none;
+		cursor: pointer;
+		z-index: 0;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $spotify-greenShadow;
+			transform: scaleX(0);
+			transition: transform 0.3s;
+			transform-origin: right;
+			z-index: -1;
+			content: '';
+		}
+		&:hover::before {
+			transform: scaleX(0.999);
+			transform-origin: left;
+		}
+	}
+}
+
+.statistics {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	.box {
+		margin-top: 1em;
+		scrollbar-width: thin;
+		scroll-behavior: smooth;
+		scrollbar-color: $spotify-blackStrong $spotify-blackLight;
+		background-color: $spotify-blackLight;
+		box-shadow: 3px 3px 5px $spotify-blackStrong;
+		border-radius: 8px;
+		&::-webkit-scrollbar-button {
+			display: none;
+		}
+		&::-webkit-scrollbar-track {
+			border-radius: 8px;
+		}
+		&__info {
+			margin: 1em 0;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+
+		&__title {
+			font-size: 2rem;
+			color: $white;
+		}
+
+		&__range {
+			color: $grey;
+			font-weight: bold;
+		}
+	}
+}
+
+.underline {
+	margin: 0 auto;
+	width: 80%;
+	height: 5px;
+	border-radius: 50%;
+	background-color: $spotify-green;
+}
+
+@media (min-width: 992px) {
+	.statistics {
+		flex-direction: row;
+	}
+
+	.box {
+		width: 50%;
+	}
+}

@@ -1,0 +1,20 @@
+@use "../../constants/colors" as *;
+.box {
+    position: fixed;
+    top: -10px;
+    padding: 1em 1.5em;
+    border-radius: 8px;
+    background-color: $spotify-blackVeryLight;
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 10000;
+    &__text {
+        color: $spotify-green;
+    }
+}
+
+@media (min-width:992px) {
+    .box {
+        top: 30px;
+    }
+} 

@@ -1,0 +1,21 @@
+@use "../../constants/colors" as * ;
+
+.box {
+    margin: 1em 1.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width:768px) { 
+    .box { 
+        margin: 1em 2em;
+    }
+}
+
+@media(min-width:992px) {
+    .box {
+        margin: 1em 2.4em;
+    }
+}

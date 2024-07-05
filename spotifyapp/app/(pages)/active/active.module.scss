@@ -1,0 +1,40 @@
+@use "../../../constants/colors" as * ;
+
+.box {
+    margin: 1em 1.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__noTracks {
+        margin: 2em 0;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__noTracksText {
+        font-size: 2rem;
+        text-align: center;
+        color: $white;
+    }
+}
+
+@media(min-width:768px) {
+    .box {
+        margin: 1em 2em;
+    }
+}
+
+@media(min-width:992px) {
+    .box {
+        margin: 1em 2.4em;
+
+        &__noTracksText {
+            font-size: 2.6rem;
+        }
+    }
+}

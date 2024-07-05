@@ -1,0 +1,61 @@
+@use "../../constants/colors" as *;
+
+.burgerBtn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 1000;
+	&:hover {
+		.burgerBtn__bars::before,
+		.burgerBtn__bars::after {
+			width: 100%;
+		}
+		.burgerBtn__bars,
+		.burgerBtn__bars::before,
+		.burgerBtn__bars::after {
+			background-color: $spotify-green;
+		}
+
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		position: absolute;
+		right: 0;
+		height: 3px;
+		background-color: $white;
+		transition: width 0.2s, background-color 0.4s;
+		content: '';
+	}
+
+    &__bars {
+        width: 100%;
+        &::after {
+            width: 67%;
+            top: 13px;
+        }
+
+        &::before {
+            width: 33%;
+            top: 27px;
+			transition-delay: 0.08s;
+        }
+    }
+}
+
+@media(min-width:992px) {
+	.burgerBtn {
+		display: none;
+	}
+}

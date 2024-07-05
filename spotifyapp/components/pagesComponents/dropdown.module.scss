@@ -1,0 +1,110 @@
+@use "../../constants/colors" as *;
+
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin: 0.5em;
+//     cursor: pointer;
+// }
+
+// .select {
+//     padding: 6px;
+//     font-size: 16px;
+//     border-radius: 4px;
+//     background-color: $spotify-blackLight;
+//     color: $grey;
+//     transition: 0.2s;
+//     border: none;
+//     outline: none;
+//     cursor: pointer;
+//     &:hover {
+//         background-color: $hover-grey;
+//         color: $white;
+//     }
+
+//     &:focus {
+//         border-color: #007bff;
+//         outline: none;
+//         background-color: #333;
+//         border: none;
+//         /* Remove focus outline */
+//     }
+
+//     option {
+//         background-color: $spotify-blackLight;
+//         color: $grey;
+//         &:hover {
+//             background-color: $hover-grey;
+//             color: $white;
+//         }
+//     }
+// }
+
+// Dropdown.module.scss
+
+.container {
+    width: 30rem;
+    position: relative;
+    display: inline-block;
+    align-content: center;
+    background-color: $spotify-blackLight;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+    box-shadow: 2px 2px 4px $spotify-blackStrong;
+}
+
+.button {
+    width: 100%;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: $spotify-blackLight;
+    color: $grey;
+    align-content: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    &:hover {
+        background-color: $hover-grey;
+        color: $white;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.dropdown {
+    position: absolute;
+    align-content: center;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 5px;
+    background-color: $spotify-blackLight;
+    color: $grey;
+    max-height: 200px;
+    overflow-y: auto;
+    outline: none;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.option {
+    padding: 10px;
+    font-size: 16px;
+    color: $grey;
+    cursor: pointer;
+    &:hover {
+        background-color: $hover-grey;
+        color: $white;
+    }
+
+    &.selected {
+        background-color: $spotify-blackLight;
+        color: $grey;
+    }
+}

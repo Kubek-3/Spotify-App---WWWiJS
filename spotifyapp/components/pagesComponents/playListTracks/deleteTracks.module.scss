@@ -1,0 +1,27 @@
+@use "../../../constants/colors" as *;
+
+.box {
+    height: fit-content;
+    width: 30rem;
+    margin-bottom: 0.5em;
+    padding: 6px;
+    border-radius: 4px;
+    align-content: center;
+    background-color: $spotify-blackLight;
+    box-shadow: 2px 2px 4px $spotify-blackStrong;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+        background-color: $hover-grey;
+        .text {
+            color: $white;
+        }
+    }
+}
+
+.text {
+    color: $grey;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.2s;
+}

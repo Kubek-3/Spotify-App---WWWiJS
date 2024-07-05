@@ -1,0 +1,29 @@
+@use "../constants/colors" as *;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	min-height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	background: linear-gradient(in hsl, $spotify-blackLight 0, $spotify-blackStrong 250px);
+	background-color: $spotify-blackStrong;
+}
+
+@media(min-width: 992px) {
+	body {
+		background: linear-gradient(in hsl, $spotify-blackLight 0, $spotify-blackStrong 400px);
+	}
+}
+
+
+
+

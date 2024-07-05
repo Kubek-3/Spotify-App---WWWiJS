@@ -1,0 +1,76 @@
+@use "../../../constants/colors" as *;
+
+.card {
+    display: flex;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.2s;
+    //align-items: center;
+    text-decoration: none;
+    &:hover {
+        background-color: $hover-grey;
+        //while hover we overwrite color of artisName and then agian overwrite it while we hover over atrist name
+        .card__artistName {
+            color: $white;
+            &:hover {
+                color: $spotify-darkgreen;
+            }
+        }
+    }
+
+    input[type="checkbox"] {
+        align-self: center;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__imgBox {
+        margin: 6px;
+        margin-right: 0.66em;
+        width: 48px;
+        height: 48px;
+    }
+
+    &__img {
+        width: auto;
+        height: 100%;
+        border-radius: 2px;
+    }
+
+    &__infoBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+
+    &__trackName {
+        margin-bottom: 0.2em;
+        color: $white;
+        text-decoration: none;
+        text-shadow: 2px 2px 4px $spotify-blackStrong;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $spotify-green;
+        }
+    }
+
+    &__artistBox {
+        text-align: left;
+    }
+
+    &__artistName {
+        font-size: 1.4rem;
+        color: $grey;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+}
+
+@media(min-width:992px) {
+    .card{
+        width: 60%;       
+    }
+}

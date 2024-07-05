@@ -1,0 +1,59 @@
+@use "../../constants/colors" as *;
+
+.nav {
+	display: none;
+	background-color: $spotify-blackStrong;
+
+	&__navBox {
+		display: flex;
+		align-items: center;
+		margin: 0 2em;
+	}
+
+	&__navTitle {
+		margin-right: 1.6em;
+		font-size: 2.4rem;
+		color: $white;
+	}
+
+	&__navMenu {
+		display: flex;
+        align-items: center;
+		list-style: none;
+	}
+
+	&__navLinkMenu {
+		padding: 1.8em 1.5em;
+	}
+
+	&__navLink {
+		position: relative;
+		padding: 1em 0.6em;
+		font-size: 1.8rem;
+		color: $white;
+		text-decoration: none;
+		&::after {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 2px;
+			width: 100%;
+			background-color: $spotify-green;
+			transform: scaleX(0);
+			transform-origin: right;
+			transition: transform 0.2s;
+			content: '';
+		}
+
+		&:hover::after {
+			transform-origin: left;
+			transform: scaleX(1);
+		}
+	}
+}
+
+@media(min-width:992px) {
+	.nav {
+		display: block;
+	}
+}

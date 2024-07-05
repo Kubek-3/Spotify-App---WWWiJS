@@ -1,0 +1,130 @@
+@use '../../constants/colors' as *;
+
+.itemCard {
+	position: relative;
+	padding: 1em 0.5em;
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	z-index: 0;
+	overflow: hidden;
+	cursor: pointer;
+	// &::after {
+	// 	position: absolute;
+	// 	top: -20%;
+	// 	left: -20%;
+	// 	height: 150%;
+	// 	width: 50px;
+	// 	rotate: 25deg;
+	// 	background-color: $spotify-greenShadow;
+	// 	content: '';
+	// }
+
+	&:hover::after {
+		animation: hoverItemCard 0.6s forwards;
+	}
+
+	&__itemImgBox {
+		width: 64px;
+		height: 64px;
+	}
+
+	&__itemImg {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__itemTitle {
+		margin: 0 0.8em;
+		color: $white;
+	}
+
+	&__itemIndex {
+		margin-right: 0.2em;
+		font-size: 1.8rem;
+		color: $white;
+	}
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transform: scaleY(0);
+		background-color: $spotify-greenShadow;
+		z-index: -1000;
+		transition: transform 0.3s;
+		content: '';
+	}
+
+	// &:hover::before {
+	// 	transform: scaleY(1);
+	// }
+	&:hover + .underline::before {
+		animation: hoverCardUnderlineLeft 0.6s forwards ease-out;
+	}
+	&:hover + .underline::after {
+		animation: hoverCardUnderlineRight 0.6s forwards ease-out;
+	}
+}
+
+.underline {
+	position: relative;
+	margin: 0 auto;
+	height: 3px;
+	border-radius: 30%;
+	width: 85%;
+	background-color: $spotify-greenShadow;
+	overflow: hidden;
+	&::before {
+		position: absolute;
+		left: 0;
+		height: 3px;
+		width: 10%;
+		background-color: $spotify-green;
+		content: '';
+	}
+
+	&::after {
+		position: absolute;
+		right: 0;
+		height: 3px;
+		width: 10%;
+		background-color: $spotify-green;
+		content: '';
+	}
+}
+
+@keyframes hoverCardUnderlineLeft {
+	0% {
+		width: 10%;
+		left: 0;
+	}
+
+	100% {
+		left: 50%;
+		width: 50%;
+	}
+}
+@keyframes hoverCardUnderlineRight {
+	0% {
+		width: 10%;
+		right: 0;
+	}
+
+	100% {
+		right: 50%;
+		width: 50%;
+	}
+}
+
+@keyframes hoverItemCard {
+	from {
+		left: -20%;
+	}
+
+	to {
+		left: 115%;
+	}
+}
